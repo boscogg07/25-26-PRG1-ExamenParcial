@@ -29,7 +29,9 @@ double euros = centimos / 100;
 ```
 
 ¿Qué observas en este código?
-
+1) La observación se refiere al 100 que divide a centimos.
+2) Es un error porque `double` es para numeros decimales y estoy dividiendo centimos entre un numero entero, lo que pasa es que puede haber error de decimales en el resultado, así que tendria que poner el 100 con un decimal por lo menos.
+3) Corrección propuesta: double euros = centimos / 100.0;
 ---
 
 ## Pregunta 2
@@ -42,7 +44,9 @@ descuento = unidades < 10 ? DESCUENTO1 : (unidades < 50 ? DESCUENTO2 : (unidades
 ```
 
 ¿Qué observas en este código?
-
+1) La observación se refiere a: double descuento = 0;. En concreto al: = 0;
+2) No es un error del todo pero es algo que se puede quitar porque primero defino la variable descuento y primeramente le doy el valor de 0 y en la siguiente línea, con un `if abreviado` le hago tomar valores con una serie de condiciones.
+3) Correción propuesta: double descuento;
 ---
 
 ## Pregunta 3
@@ -58,6 +62,14 @@ System.out.println(resto + " moneda(s) de 1 euros");
 ```
 
 ¿Qué observas en este código?
+1) La observación se refiere a la declaración de las variables resto y cociente.
+2) Es un error de legibilidad, es decir, es mejor declarar la variable cociente antes que el resto, porque el resto es lo que sobra del cociente.
+3) Corrección propuesta:
+    int cociente = vuelta / 100;
+    int resto = vuelta % 100;
+    System.out.println(cociente + " billete(s) de 100 euros");
+    // ... (se reusa cociente/resto)
+    System.out.println(resto + " moneda(s) de 1 euros");
 
 ---
 
@@ -72,7 +84,9 @@ segundos = segundos % (SEGUNDO_DE_HORA);
 ```
 
 ¿Qué observas en este código?
-
+1) La observación se refiere a los paréntesis en la parte de: segundos = segundos % (SEGUNDO_DE_HORA);
+2) En este caso no es un error del todo, es decir, se pueden quitar los paréntesis o dejarlo con ellos porque a la hora de ejecutar el código no cambia el resultado, pero si fuese una expresión con más variables sí seria aconsejable usar paréntesis.
+3) Correción propuesta: segundos = segundos % SEGUNDOS_DE_HORA);
 ---
 
 ## Pregunta 5
@@ -160,7 +174,9 @@ final double DESCUENTO4 = 0.15;
 ```
 
 ¿Qué observas en este código?
-
+1) La observación se refiere al: final double DESCUENTO1 = 0;
+2) Es un error porque lo he asignado como tipo de variable `double` cuando es mejor ponerlo como `int` porque el valor de DESCUENTO1 es 0, o sea un entero, y también porque el tipo `int` ocupa menos bits q el `double`.
+3) Corrección propuesta: final int DESCUENTO1 = 0;
 ---
 
 ## Pregunta 10
